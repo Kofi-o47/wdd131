@@ -1,0 +1,302 @@
+/* Mobile First Styles */
+main {
+    padding: 0 1rem;
+}
+
+.hero {
+    margin-bottom: 1.5rem;
+}
+
+.hero img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-size: 1.3rem;
+}
+
+/* Wide View Styles (Desktop - 768px and above) */
+@media (min-width: 768px) {
+    /* Main layout grid */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 2rem;
+        padding: 0 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Header styling for wide view */
+    header {
+        padding: 2rem;
+        margin-bottom: 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    /* Hero section spans full width */
+    .hero {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin-bottom: 0;
+    }
+
+    .hero img {
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Data section - left column */
+    .data {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .data h2 {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--accent-color);
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .data-content {
+        background: var(--card-background);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        border: 1px solid var(--border-color);
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .data-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.2s ease;
+    }
+
+    .data-item:hover {
+        background-color: rgba(252, 61, 50, 0.05);
+        border-radius: 4px;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .data-item:last-child {
+        border-bottom: none;
+    }
+
+    .data-item .label {
+        font-weight: 700;
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        min-width: 140px;
+    }
+
+    .data-item .value {
+        color: var(--text-color);
+        font-weight: 500;
+        text-align: right;
+        flex: 1;
+    }
+
+    /* Weather section - right column */
+    .weather {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .weather h2 {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        color: var(--accent-color);
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    /* Weather icon as pseudo-element for wide view */
+    .weather-icon::after {
+        content: "⛅";
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.8rem;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .weather-content {
+        background: var(--card-background);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        border: 1px solid var(--border-color);
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+    }
+
+    /* Hide SVG icon in wide view */
+    .mobile-weather-icon {
+        display: none;
+    }
+
+    .weather-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.2s ease;
+    }
+
+    .weather-item:hover {
+        background-color: rgba(0, 126, 58, 0.05);
+        border-radius: 4px;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .weather-item:last-child {
+        border-bottom: none;
+    }
+
+    .weather-item .label {
+        font-weight: 700;
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+        min-width: 120px;
+    }
+
+    .weather-item .value {
+        color: var(--text-color);
+        font-weight: 500;
+        text-align: right;
+        flex: 1;
+    }
+
+    /* Special styling for wind chill */
+    #wind-chill {
+        font-weight: 700;
+        color: var(--primary-color);
+        font-size: 1.1rem;
+    }
+
+    /* Footer styling for wide view */
+    footer {
+        margin-top: 3rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    footer p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+}
+
+/* Large Desktop Styles (1024px and above) */
+@media (min-width: 1024px) {
+    main {
+        gap: 3rem;
+        padding: 0 3rem;
+    }
+
+    .hero img {
+        height: 500px;
+    }
+
+    .data-content,
+    .weather-content {
+        padding: 2.5rem;
+    }
+
+    .data-item,
+    .weather-item {
+        padding: 1rem 0;
+    }
+
+    .data-item .label,
+    .weather-item .label {
+        font-size: 1.2rem;
+        min-width: 160px;
+    }
+
+    .data-item .value,
+    .weather-item .value {
+        font-size: 1.2rem;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Extra Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .hero img {
+        height: 550px;
+    }
+
+    .data-content,
+    .weather-content {
+        padding: 3rem;
+    }
+
+    .weather-icon::after {
+        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore ABURI - a beautiful island nation with unique biodiversity and rich culture">
+    <title>GHANA - WDD131 Country Page</title>
+    <link rel="stylesheet" href="styles/base2.css">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>GHANA</h1>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <picture>
+                <source 
+                    type="images/webp" 
+                    srcset="images/MOUNT-hero-small.webp 600w, 
+                            images/MOUNT-hero-medium.webp 900w, 
+                            images/MOUNT-hero-large.webp 1200w"
+                    sizes="(max-width: 600px) 600px,
+                           (max-width: 900px) 900px,
+                           1200px">
+                <img 
+                    src="images/MOUNT.webp" 
+                    alt="Beautiful landscape of ABURI mountains"
+                    loading="lazy">
+            </picture>
+        </section>
+        
+        <section class="data">
+            <h2>Data</h2>
+            <div class="data-content">
+                <div class="data-item">
+                    <span class="label">Area:</span>
+                    <span class="value">587,041 sq km</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Population:</span>
+                    <span class="value">30 MILLION</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Capital:</span>
+                    <span class="value">Accra</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Languages:</span>
+                    <span class="value">Twi, French</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Currency:</span>
+                    <span class="value">Ghana Cedis(GHC)</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Time Zone:</span>
+                    <span class="value">UTC+3</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Calling Code:</span>
+                    <span class="value">+233</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Internet TLD:</span>
+                    <span class="value">.mg</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="weather">
+            <h2>Weather <span class="weather-icon"></span></h2>
+            <div class="weather-content">
+                <img src="images/SUM.png" alt="Partly Cloudy" class="mobile-weather-icon">
+                <div class="weather-item">
+                    <span class="label">Temperature:</span>
+                    <span class="value"><span id="temperature">10</span>°C</span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Conditions:</span>
+                    <span class="value">Partly Cloudy</span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Wind:</span>
+                    <span class="value"><span id="wind-speed">5</span> km/h</span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Wind Chill:</span>
+                    <span class="value"><span id="wind-chill">N/A</span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy;<span id="current-year"></span> | KOFI OWUSU ANSAH | GHANA</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>
